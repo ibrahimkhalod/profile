@@ -43,7 +43,7 @@ const projects = [
       "Increased proposal accuracy to 99.5%",
       "Directly contributed to a 25% increase in won contracts"
     ],
-    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=800&q=80"
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80"
   }
 ];
 

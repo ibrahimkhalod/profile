@@ -1,13 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { LayoutDashboard, Database, ShieldCheck, LineChart } from 'lucide-react';
+import { LayoutDashboard, Palette, ShieldCheck, LineChart } from 'lucide-react';
 
 const services = [
   {
-    icon: <Database size={32} className="text-primary" />,
-    title: "ERP System Development",
-    description: "End-to-end architecture of Enterprise Resource Planning systems tailored to your workflows. Eliminate data silos, automate reporting, and gain real-time visibility into your business operations.",
-    features: ["Custom Workflows", "Data Migration", "Department Integration"]
+    icon: <Palette size={32} className="text-primary" />,
+    title: "Creative Graphic Design",
+    description: "Crafting visually compelling brand identities, marketing materials, and digital assets. From logos to full brand systems, every design communicates your value with precision and style.",
+    features: ["Brand Identity", "Print & Digital", "Social Media Design"]
   },
   {
     icon: <LayoutDashboard size={32} className="text-accent" />,

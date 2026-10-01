@@ -2,11 +2,10 @@ import { useEffect, useState } from 'react';
 import { ArrowUpRight, ArrowDown, Code2, Server, Palette, Mail, Phone, MapPin, Menu, X, Download, Check, Layers, GraduationCap } from 'lucide-react';
 import { content, career } from './content';
 
-const icons = [Code2, Server, Palette];
-const email = 'ibrahimkhalod@gmail.com';
+const icons = [Code2, Server, Palette];const email = 'ibrahimkhaloud@gmail.com';
 export default function App() {
   const [lang, setLang] = useState(() => {
-    try { return localStorage.getItem('portfolio-language') === 'ar' ? 'ar' : 'en'; } catch { return 'en'; }
+    try { const saved = localStorage.getItem('portfolio-language'); return ['en', 'ar', 'am'].includes(saved) ? saved : 'en'; } catch { return 'en'; }
   });
   const [menuOpen, setMenuOpen] = useState(false);
   const [filter, setFilter] = useState('all');
@@ -42,7 +41,7 @@ export default function App() {
         {c.nav.map(([label, id]) => <a href={`#${id}`} key={id} onClick={() => setMenuOpen(false)}>{label}</a>)}
         <a className="nav-contact" href="#contact" onClick={() => setMenuOpen(false)}>{c.letsTalk}<ArrowUpRight size={16}/></a>
       </nav>
-      <div className="header-actions"><button className="language" onClick={() => { setLang(ar ? 'en' : 'ar'); setMenuOpen(false); }} aria-label={ar ? 'Switch to English' : 'التبديل إلى العربية'}>{ar ? 'EN' : 'عربي'}</button><button className="menu-button" aria-label={menuOpen ? c.closeMenu : c.openMenu} aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => setMenuOpen(open => !open)}>{menuOpen ? <X/> : <Menu/>}</button></div>
+      <div className="header-actions"><div className="language-options" role="group" aria-label="Language"><button type="button" aria-pressed={lang === 'en'} onClick={() => { setLang('en'); setMenuOpen(false); }}>EN</button><button type="button" aria-pressed={lang === 'ar'} onClick={() => { setLang('ar'); setMenuOpen(false); }}>عربي</button><button type="button" aria-pressed={lang === 'am'} onClick={() => { setLang('am'); setMenuOpen(false); }}>አማ</button></div><button className="menu-button" aria-label={menuOpen ? c.closeMenu : c.openMenu} aria-expanded={menuOpen} aria-controls="main-navigation" onClick={() => setMenuOpen(open => !open)}>{menuOpen ? <X/> : <Menu/>}</button></div>
     </div></header>
     <main id="main">
       <section className="hero wrap" id="home">

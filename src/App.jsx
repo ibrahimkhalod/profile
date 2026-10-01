@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { ArrowUpRight, ArrowDown, Code2, Server, Palette, Mail, Phone, MapPin, Menu, X, Download, Check, Layers, GraduationCap } from 'lucide-react';
 import { content, career } from './content';
 
+
 const icons = [Code2, Server, Palette];const email = 'ibrahimkhaloud@gmail.com';
 export default function App() {
   const [lang, setLang] = useState(() => {
@@ -11,7 +12,7 @@ export default function App() {
   const [filter, setFilter] = useState('all');
   const [copied, setCopied] = useState(false);
   const ar = lang === 'ar';
-  const c = content[lang];
+  const c = content[lang] || content.en;
   useEffect(() => {
     document.documentElement.lang = lang;
     document.documentElement.dir = ar ? 'rtl' : 'ltr';
@@ -59,3 +60,4 @@ export default function App() {
     <footer className="wrap footer"><a className="monogram" href="#home" aria-label={c.backTop} dir="ltr">ik<span>.</span></a><span>© {new Date().getFullYear()} {c.name}</span><span>{c.footer}</span><a href="#home" className="text-link">{c.backTop}<ArrowUpRight size={16}/></a></footer>
   </>;
 }
+

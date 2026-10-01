@@ -5,7 +5,7 @@ import { content, career } from './content';
 
 
 
-const icons = [Code2, Server, Palette];const email = 'ibrahimkhaloud@gmail.com';
+const icons = [Code2, Server, Palette];const email = 'ibrahimkhalod@gmail.com';
 export default function App() {
   const [lang, setLang] = useState(() => {
     try { const saved = localStorage.getItem('portfolio-language'); return ['en', 'ar', 'am'].includes(saved) ? saved : 'en'; } catch { return 'en'; }
